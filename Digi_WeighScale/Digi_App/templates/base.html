@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,15 +15,31 @@
           font-style: italic;
         }
 
-        .answer {
-          font-size: larger;
-          font-weight: 200;
-          font-family: Verdana, Geneva, Tahoma, sans-serif;
-          color: darkblue;
+        .centerdiv{
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
         }
+
+        img{
+            position: relative;
+        }
+
+        a{
+            text-align: center;
+            margin: 10px;
+        }
+        a img{
+            transition: all 0.2s linear;
+        }
+
+        a:hover img{
+            transform: scale(2);
+        }
+
         form {
-            margin-top: 5%;
-            margin-bottom: 10%;
+            margin-top: 1%;
+            margin-bottom: 1%;
             margin-left: 15%;
             margin-right: 15%;
             padding: 1%;
@@ -40,6 +57,55 @@
 </head>
 <body>
     <center class="heading"> Digi-WeighScale </center>
+    <p class="centerdiv"> 
+      <a href="https://www.facebook.com/info.yashpanchal/" target="_blank"><img src="{%static 'images/facebook.png'%}" alt="" width="25" height="25"> </a>
+      <a href="https://www.instagram.com/yashpanchal__/" target="_blank"><img src="{%static 'images/instagram.png'%}" alt="" width="25" height="25"></a>
+      <a href="https://www.linkedin.com/in/info-yashpanchal/" target="_blank"><img src="{%static 'images/linkedin.png'%}" alt="" width="25" height="25"></a>
+      <a href="https://github.com/infoyashpanchal" target="_blank"><img src="{%static 'images/github.png'%}" alt="" width="25" height="25"></a>
+    </p>
+
+<!--     InSTRUCTION    -->
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        INSTRUCTIONS:
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        
+        <ol>
+          <strong>CHEST:</strong> Stand straight with an erect posture, don't hold too much breath and measure your Chest right above your nipples
+        </ol>
+        <ol>
+            <strong>Arms:</strong> Keep your Arm straight and relaxed, close your palm(Punch position) and measure <strong>BICEP, FOREARM & WRIST</strong>
+        </ol>
+        <ol>
+            <strong>ABDOMEN:</strong> Stand straight in relaxed position, Don't hold the breath in you stomach and measure your <strong>BELLY</strong> through the Belly-button all the way around your back
+        </ol>
+        <ol>
+            <strong>WAIST & HIPS:</strong> Stand straight and erect measure your <strong>WAIST</strong> and then your <strong>HIPS</strong> size right right bellow your Waist where your Leg joins the upper body
+        </ol>
+        <ol>
+            <strong>Legs:</strong> Standing straight and relaxed keeping the foot completely on the ground measure your <strong>THIGH, KNEE & CALF</strong> muscles
+        </ol>
+        <ol>
+            All measurements must be in <strong>Centimeters</strong>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body" style="font-size: 2pc;">
+    <center>In somecase there can be an error of +/-3% in the output</center>
+    <center>{{ weight }}</center>
+  </div>
+</div>
+
+<!--     FORM    -->
     <form method="POST">
     {% csrf_token %}
         <div class="row">
@@ -91,7 +157,6 @@
              </div>
           </div>
     </form>
-    <center class="answer" >{{ weight }}</center>
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
