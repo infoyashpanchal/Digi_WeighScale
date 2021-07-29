@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
         .heading {
-          font-size: 40pt;
+          font-size: 35pt;
           font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
           font-style: italic;
         }
@@ -18,7 +18,7 @@
         .centerdiv{
             display: flex;
             justify-content: center;
-            align-items: baseline;
+            align-items:flex-end;
         }
 
         img{
@@ -56,7 +56,7 @@
     </style>
 </head>
 <body>
-    <center class="heading"> Digi-WeighScale </center>
+    <center class="heading"> <strong>Digi-WeighScale</strong> </center>
     <p class="centerdiv"> 
       <a href="https://www.facebook.com/info.yashpanchal/" target="_blank"><img src="{%static 'images/facebook.png'%}" alt="" width="25" height="25"> </a>
       <a href="https://www.instagram.com/yashpanchal__/" target="_blank"><img src="{%static 'images/instagram.png'%}" alt="" width="25" height="25"></a>
@@ -100,7 +100,6 @@
 
 <div class="card">
   <div class="card-body" style="font-size: 2pc;">
-    <center>In somecase there can be an error of +/-3% in the output</center>
     <center>{{ weight }}</center>
   </div>
 </div>
