@@ -1,80 +1,126 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digi_WeighScale</title>
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <style>
-        .heading {
-          font-size: 35pt;
-          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-          font-style: italic;
-        }
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .centerdiv{
-            display: flex;
-            justify-content: center;
-            align-items:flex-end;
-        }
+<title>Digi_WeighScale</title>
 
-        img{
-            position: relative;
-        }
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-        a{
-            text-align: center;
-            margin: 10px;
-        }
-        a img{
-            transition: all 0.2s linear;
-        }
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-        a:hover img{
-            transform: scale(2);
-        }
+<style>
+    body{
+        padding: 2%;
+        color: #EDF5E1;
+        background-color: #379683;
+    }
 
-        form {
-            margin-top: 1%;
-            margin-bottom: 1%;
-            margin-left: 15%;
-            margin-right: 15%;
-            padding: 1%;
-            background-color: lemonchiffon;
-        }
-        .row {
-            margin: 1%;
-        }
+    .centerdiv{
+        display: flex;
+        margin-bottom: 15px;
+        justify-content: left;
+        align-items: baseline;
+    }
 
-        .row button {
-            display: flexbox;
-            width: 100%;
-        }
-    </style>
+    .centerdiv strong{
+        font-size: 45pt;
+    }
+
+    img{
+        position: relative;
+    }
+
+    a{
+        text-align: center;
+        margin: 12px;
+    }
+
+    a img{
+        transition: all 0.2s linear;
+    }
+
+    a:hover img{
+        transform: scale(2);
+    }
+
+    form {
+        margin-top: 1%;
+        margin-bottom: 1%;
+        margin-left: 15%;
+        margin-right: 15%;
+        padding: 1%;
+    }
+
+    .row {
+        margin: 1%;
+    }
+
+    #collapseTwo{
+
+        color: black;
+        background-color: #EDF5E1;
+    }
+
+    .card-body {
+        color: #EDF5E1;
+        background-color: #05386B;
+
+    }
+
+    .row button {
+        display: flexbox;
+        width: 100%;
+    }
+
+    .accordion-button{
+        color: #EDF5E1;
+        background-color: #05386B;
+    }
+</style>
 </head>
+
 <body>
-    <center class="heading"> <strong>Digi-WeighScale</strong> </center>
-    <p class="centerdiv"> 
-      <a href="https://www.facebook.com/info.yashpanchal/" target="_blank"><img src="{%static 'images/facebook.png'%}" alt="" width="25" height="25"> </a>
-      <a href="https://www.instagram.com/yashpanchal__/" target="_blank"><img src="{%static 'images/instagram.png'%}" alt="" width="25" height="25"></a>
-      <a href="https://www.linkedin.com/in/info-yashpanchal/" target="_blank"><img src="{%static 'images/linkedin.png'%}" alt="" width="25" height="25"></a>
-      <a href="https://github.com/infoyashpanchal" target="_blank"><img src="{%static 'images/github.png'%}" alt="" width="25" height="25"></a>
-    </p>
+<!-- Heading -->
+<div class="centerdiv">
+    <div id="heading" style="float: left;">
+        &emsp; &emsp;
+        <strong> <u> Digi-WeighScale </u> </strong> &emsp; by Yash Panchal
+    </div>
+    <div id="links" style="float: right;">
+        &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;
+        <a href="https://www.facebook.com/info.yashpanchal/"    target="_blank">
+          <img src="{% static 'images/facebook.png' %}" alt="" width="35" height="35">
+        </a>
+        <a href="https://www.instagram.com/yashpanchal__/"  target="_blank">
+          <img src="{% static 'images/instagram.png' %}" alt="instagram" width="35" height="35">
+        </a>
+        <a href="https://www.linkedin.com/in/info-yashpanchal/" target="_blank">
+            <img src="{% static 'images/linkedin.png' %}" alt="linkedin" width="35" height="35">
+        </a>
+        <a href="https://github.com/infoyashpanchal" target="_blank">
+            <img src="{% static 'images/github.png' %}" alt="github" width="35" height="35">
+        </a>
+    </div>
+</div>
 
 <!--     InSTRUCTION    -->
 <div class="accordion" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingTwo">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
         INSTRUCTIONS:
       </button>
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        
+
         <ol>
           <strong>CHEST:</strong> Stand straight with an erect posture, don't hold too much breath and measure your Chest right above your nipples
         </ol>
@@ -98,66 +144,65 @@
   </div>
 </div>
 
+<!-- Output -->
 <div class="card">
   <div class="card-body" style="font-size: 2pc;">
+    <center>NOTE: This application gives output with 97% accuracy</center>
     <center>{{ weight }}</center>
   </div>
 </div>
 
 <!--     FORM    -->
-    <form method="POST">
-    {% csrf_token %}
-        <div class="row">
-            <div class="col">
-              <input type="number" step="0.001" class="form-control" placeholder="Chest (cm)" name="chest" required>
-            </div>
-            <div class="col">
-              <input type="number" step="0.001" class="form-control" placeholder="Biceps (cm)" name="bicep" required>
-            </div>
+<form method="POST">
+{% csrf_token %}
+    <div class="row">
+        <div class="col">
+            <input type="number" step="0.001" class="form-control" placeholder="Chest (cm)" name="chest" required>
         </div>
-        <div class="row">
-            <div class="col">
-              <input type="number" step="0.001" class="form-control" placeholder="Forearm (cm)" name="forearm" required>
-            </div>
-            <div class="col">
-              <input type="number" step="0.001" class="form-control" placeholder="Wrist (cm)" name="wrist" required>
-            </div>
+        <div class="col">
+            <input type="number" step="0.001" class="form-control" placeholder="Biceps (cm)" name="bicep" required>
         </div>
-        <div class="row">
-            <div class="col">
-              <input type="number" step="0.001" class="form-control" placeholder="Abdomen (cm)" name="abdomen" required>
-            </div>
-            <div class="col">
-              <input type="number" step="0.001" class="form-control" placeholder="Hip (cm)" name="hip" required>
-            </div>
-         </div>
-         <div class="row">
-             <div class="col">
-               <input type="number" step="0.001" class="form-control" placeholder="Thigh (cm)" name="thigh" required>
-             </div>
-             <div class="col">
-               <input type="number" step="0.001" class="form-control" placeholder="Knee (cm)" name="knee" required>
-             </div>
-         </div>
-         <div class="row">
-             <div class="col">
-               <input type="number" step="0.001" class="form-control" placeholder="Ankle (cm)" name="ankle" required>
-             </div>
-             <div class="col">
-               <input type="number" step="0.001" class="form-control" placeholder="Height (cm)" name="height" required>
-             </div>
-         </div>
-         <div class="row">
-             <div class="col">
-               <input type="number" class="form-control" placeholder="Age (yr)" name="age" required>
-             </div>
-             <div class="col">
-                <button type="submit" class="btn btn-primary">Submit</button>
-             </div>
-          </div>
-    </form>
-
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input type="number" step="0.001" class="form-control" placeholder="Forearm (cm)" name="forearm" required>
+        </div>
+        <div class="col">
+            <input type="number" step="0.001" class="form-control" placeholder="Wrist (cm)" name="wrist" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input type="number" step="0.001" class="form-control" placeholder="Abdomen (cm)" name="abdomen" required>
+        </div>
+        <div class="col">
+            <input type="number" step="0.001" class="form-control" placeholder="Hip (cm)" name="hip" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input type="number" step="0.001" class="form-control" placeholder="Thigh (cm)" name="thigh" required>
+        </div>
+        <div class="col">
+            <input type="number" step="0.001" class="form-control" placeholder="Knee (cm)" name="knee" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input type="number" step="0.001" class="form-control" placeholder="Ankle (cm)" name="ankle" required>
+        </div>
+        <div class="col">
+            <input type="number" step="0.001" class="form-control" placeholder="Height (cm)" name="height" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+           <input type="number" class="form-control" placeholder="Age (yr)" name="age" required>
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>
 </body>
 </html>
