@@ -17,29 +17,47 @@
 
 <style>
     body{
-        padding: 2%;
+        padding: 2vmax;
         color: #EDF5E1;
         background-color: #379683;
     }
 
     .centerdiv{
         display: flex;
+        position: relative;
         margin-bottom: 15px;
         justify-content: left;
         align-items: baseline;
     }
 
-    .centerdiv strong{
-        font-size: 45pt;
+    .row #heading{
+        position: relative;
+        min-width: fit-content;
+        font-size: 3vmin;
+        float: left;
+        word-wrap: inherit;
+    }
+    .row #heading strong{
+        font-size: 8vmin;
+    }
+
+    .row #links{
+        text-indent: 1vw;
+        word-wrap: break-word;
+        word-break: keep-all;
+        position: relative;
+        min-width: fit-content;
+        float: right;
     }
 
     img{
         position: relative;
+    
     }
 
     a{
         text-align: center;
-        margin: 12px;
+        margin: 5px;
     }
 
     a img{
@@ -53,9 +71,13 @@
     form {
         margin-top: 1%;
         margin-bottom: 1%;
-        margin-left: 15%;
-        margin-right: 15%;
+        margin-left: 11%;
+        margin-right: 11%;
         padding: 1%;
+    }
+
+    .col input{
+        min-width: 30vmax;
     }
 
     .row {
@@ -83,29 +105,32 @@
         color: #EDF5E1;
         background-color: #05386B;
     }
+    .card-body strong{
+        min-width: 40vmin;
+        font-size: 1.5pc;
+    }
 </style>
 </head>
 
 <body>
 <!-- Heading -->
-<div class="centerdiv">
-    <div id="heading" style="float: left;">
-        &emsp; &emsp;
-        <strong> <u> Digi-WeighScale </u> </strong> &emsp; by Yash Panchal
+<div class="row">
+    <div class="col" id="heading">
+        <p><strong> <u> Digi-WeighScale </u> </strong> &emsp; by Yash Panchal</p>
     </div>
-    <div id="links" style="float: right;">
-        &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;
+    <div class="col" id="links">
+    
         <a href="https://www.facebook.com/info.yashpanchal/"    target="_blank">
-          <img src="{% static 'images/facebook.png' %}" alt="" width="35" height="35">
+          <img src="{% static 'images/facebook.png' %}" alt="" width="30" height="30">
         </a>
         <a href="https://www.instagram.com/yashpanchal__/"  target="_blank">
-          <img src="{% static 'images/instagram.png' %}" alt="instagram" width="35" height="35">
+          <img src="{% static 'images/instagram.png' %}" alt="instagram" width="30" height="30">
         </a>
         <a href="https://www.linkedin.com/in/info-yashpanchal/" target="_blank">
-            <img src="{% static 'images/linkedin.png' %}" alt="linkedin" width="35" height="35">
+            <img src="{% static 'images/linkedin.png' %}" alt="linkedin" width="30" height="30">
         </a>
         <a href="https://github.com/infoyashpanchal" target="_blank">
-            <img src="{% static 'images/github.png' %}" alt="github" width="35" height="35">
+            <img src="{% static 'images/github.png' %}" alt="github" width="30" height="30">
         </a>
     </div>
 </div>
@@ -146,9 +171,9 @@
 
 <!-- Output -->
 <div class="card">
-  <div class="card-body" style="font-size: 2pc;">
-    <center>NOTE: This application gives output with 97% accuracy</center>
-    <center>{{ weight }}</center>
+  <div class="card-body" style="word-wrap: break-word; text-align: center; word-break: keep-all;">
+    NOTE: This application gives output with 97% accuracy<hr>
+    <strong>{{ weight }}</strong>
   </div>
 </div>
 
